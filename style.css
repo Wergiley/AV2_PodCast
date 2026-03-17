@@ -1,0 +1,236 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+/* Container */
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #181818;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+}
+
+.container p {
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 42px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  background: linear-gradient(90deg, #1db954, #1ed760);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Título */
+.episode-title {
+  font-size: 20px;
+  color: #fff;
+}
+
+/* CD */
+.cd {
+  margin: 20px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  animation: spin 4s linear infinite;
+  object-fit: cover;
+  display: block;
+  animation: spin 4s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Onda */
+.wave {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* importante */
+  gap: 6px;
+  height: 40px; /* ALTURA FIXA */
+  margin: 20px 0;
+  overflow: hidden; /* impede "vazar" */
+}
+
+.wave span {
+  width: 6px;
+  height: 20px; /* altura base */
+  background: #00dcde;
+  border-radius: 5px;
+
+  animation: wave 1s infinite ease-in-out;
+  animation-play-state: paused;
+}
+
+.wave span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.wave span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.wave span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.wave span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.wave span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1.8);
+  }
+}
+
+/* CONTROLES */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* BLOCO PRINCIPAL */
+.main-controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* BOTÃO REDONDO */
+button {
+  background: #1b130d00;
+  border: none;
+  padding: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ÍCONE PLAY */
+button img {
+  width: 50px;
+  height: 50px;
+}
+
+/* TEMPO */
+#time {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: px;
+}
+
+/* PROGRESSO */
+#progress {
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  appearance: none;
+  background: #555;
+}
+
+#progress::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #00dcde;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Container */
+.volume {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  height: 100px; /* 🔥 aumenta área ativa */
+  justify-content: flex-end;
+}
+
+/* Ícone */
+.icon-volume {
+  width: 40px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+/* Barra escondida */
+#volume {
+  position: absolute;
+  bottom: 125px;
+  width: 100px;
+  height: 6px;
+  transform: rotate(-90deg);
+  background: #555;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+/* Mostrar ao passar o mouse */
+.volume:hover #volume {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Bolinha */
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #1db954;
+  border-radius: 50%;
+}
+
+.visual {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 20px auto;
+}
+
+.main-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* barra ocupa espaço */
+.progress-area {
+  flex: 1;
+}
+
+/* botão fixo à esquerda */
+#btn {
+  flex-shrink: 0;
+}
