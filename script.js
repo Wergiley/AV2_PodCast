@@ -114,3 +114,6 @@ audio.addEventListener("ended", () => {
   audio.currentTime = 0;
 });
 
+function skip(seconds) {
+    audio.currentTime += seconds;
+}
