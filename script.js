@@ -93,3 +93,23 @@ function formatTime(seconds) {
 
   return `${String(min).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
 }
+
+// QUANDO O ÁUDIO TERMINA
+audio.addEventListener("ended", () => {
+  // parar animação do CD
+  cd.style.animationPlayState = "paused";
+
+  // parar ondas
+  wave.forEach(bar => bar.style.animationPlayState = "paused");
+
+  // voltar botão para PLAY
+  iconPlay.src = "img/play.png";
+
+  // resetar progresso
+  progress.value = 0;
+  progress.style.background = "#555";
+
+  // resetar tempo
+  time.innerText = "00:00 / " + formatTime(audio.duration);
+  audio.currentTime = 0;
+});
