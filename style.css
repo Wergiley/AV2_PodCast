@@ -1,31 +1,26 @@
+/* GERAL */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: white;
   text-align: center;
   margin: 0;
+  min-height: 100vh;
 }
 
+/* CONTAINER PRINCIPAL (Glassmorphism) */
 .container {
   max-width: 500px;
   margin: 50px auto;
   padding: 30px;
-  /* Alteração aqui: fundo semi-transparente e blur */
   background: rgba(24, 24, 24, 0.85); 
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Borda fina para dar brilho */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
-.container p {
-  color: #bbb;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
 .main-title {
-  text-align: center;
   font-size: 58px;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -40,28 +35,31 @@ body {
 
 .microfone {
   font-size: 60px;
-  -webkit-background-clip: unset;
-  background-clip: text;
   -webkit-text-fill-color: #ff00fb;
   display: inline-block;
   margin: 0 10px;
 }
 
-/* Título */
 .episode-title {
   font-size: 28px;
-  color: #fff;
+  margin-bottom: 5px;
 }
 
-/* CD */
+.container p {
+  color: #bbb;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* DISCO (CD) */
 .cd {
   margin: 20px auto;
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  animation: spin 4s linear infinite;
   object-fit: cover;
   display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   animation: spin 4s linear infinite;
   animation-play-state: paused;
 }
@@ -70,317 +68,200 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* Onda */
+/* ONDAS DE ÁUDIO */
 .wave {
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* importante */
+  align-items: flex-end;
   gap: 6px;
-  height: 40px; /* ALTURA FIXA */
+  height: 40px;
   margin: 20px 0;
-  overflow: hidden; /* impede "vazar" */
 }
 
 .wave span {
   width: 6px;
-  height: 20px; /* altura base */
-   background: linear-gradient(to top, #003e3f, #00f1f1);
+  height: 20px;
+  background: linear-gradient(to top, #003e3f, #00f1f1);
   border-radius: 5px;
-
   animation: wave 1s infinite ease-in-out;
   animation-play-state: paused;
 }
 
-
 .wave span:nth-child(1) {
+
   animation-delay: 0s;
+
 }
+
+
 
 .wave span:nth-child(2) {
+
   animation-delay: 0.2s;
+
 }
+
+
 
 .wave span:nth-child(3) {
+
   animation-delay: 0.4s;
+
 }
+
+
 
 .wave span:nth-child(4) {
+
   animation-delay: 0.6s;
+
 }
+
+
 
 .wave span:nth-child(5) {
+
   animation-delay: 0.8s;
+
 }
+
+
 
 @keyframes wave {
-  0%, 100% {
-    transform: scaleY(0.3);
-  }
-  50% {
-    transform: scaleY(1.8);
-  }
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1.8); }
 }
 
-/* CONTROLES */
+/* CONTROLES ESTILO SPOTIFY */
 .controls {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-}
-
-/* BLOCO PRINCIPAL */
-.main-controls {
-  width: 100%;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 15px;
+  position: relative;
+  width: 100%;
 }
 
-/* BOTÃO REDONDO */
-button {
-  background: #1b130d00;
-  border: none;
-  padding: 0px;
-  border-radius: 50%;
-  cursor: pointer;
+/* BARRA DE PROGRESSO */
+.progress-container {
+  width: 100%;
 }
 
-button img {
-  transition: transform 0.2s ease, opacity 0.2s;
-}
-
-button img:hover {
-  transform: scale(1.1); /* Aumenta levemente ao passar o mouse */
-  filter: brightness(1.2);
-}
-
-/* ÍCONE PLAY */
-button img {
-  width: 50px;
-  height: 50px;
-}
-
-/* TEMPO */
-#time {
-  font-size: 13px;
-  color: #aaa;
-  margin-top: px;
-}
-
-/* PROGRESSO */
 #progress {
   width: 100%;
   height: 6px;
   border-radius: 5px;
   appearance: none;
+  -webkit-appearance: none;
   background: #555;
+  cursor: pointer;
 }
 
 #progress::-webkit-slider-thumb {
-  appearance: none;
+  -webkit-appearance: none;
   width: 14px;
   height: 14px;
   background: #00dcde;
   border-radius: 50%;
-  cursor: pointer;
 }
 
-/* Container */
-.volume {
-  position: relative;
+.time-display {
   display: flex;
-  flex-direction: column-reverse;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+/* BOTÕES */
+.buttons-container {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  height: 100px; /* 🔥 aumenta área ativa */
-  justify-content: flex-end;
+  gap: 30px;
 }
 
-/* Ícone */
-.icon-volume {
-  width: 40px;
-  margin-top: 25px;
+button {
+  background: transparent;
+  border: none;
   cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
-/* Barra escondida */
-#volume {
+button img {
+  transition: transform 0.2s, filter 0.2s;
+}
+
+button img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.btn-lg { width: 65px; height: 65px; }
+.btn-sm { width: 35px; height: 35px; opacity: 0.8; }
+
+/* VOLUME (CANTO SUPERIOR DIREITO) */
+.volume-box {
   position: absolute;
-  bottom: 125px;
-  width: 100px;
-  height: 6px;
-  transform: rotate(-90deg);
-  background: #555;
-  border-radius: 10px;
-  opacity: 0;
-  pointer-events: none;
+  right: 0;
+  top: -45px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+}
+
+.volume-box img {
+  width: 22px;
+  cursor: pointer;
+  opacity: 0.7;
   transition: 0.3s;
 }
 
-/* Mostrar ao passar o mouse */
-.volume:hover #volume {
-  opacity: 1;
-  pointer-events: auto;
+#volume {
+  width: 0; /* Começa escondido */
+  opacity: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 5px;
+  background: #555;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  cursor: pointer;
 }
 
-/* Bolinha */
+/* EFEITO HOVER VOLUME */
+.volume-box:hover #volume {
+  width: 80px;
+  opacity: 1;
+}
+
 #volume::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 14px;
-  height: 14px;
-  background: #1db954;
+  width: 12px;
+  height: 12px;
+  background: #00dcde;
   border-radius: 50%;
 }
 
-.visual {
-  position: relative;
-  width: 280px;
-  height: 280px;
-  margin: 20px auto;
-}
-
-.main-controls {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-/* barra ocupa espaço */
-.progress-area {
-  flex: 1;
-}
-
-/* botão fixo à esquerda */
-#btn {
-  flex-shrink: 0;
-}
-
-/* Rodapé da página */
+/* RODAPÉ */
 .footer {
   width: 100%;
-  background: #111; /* cor de fundo escura */
-  color: #aaa;      /* texto cinza claro */
+  background: #111;
+  color: #aaa;
   text-align: center;
-  padding: 15px 0;
+  padding: 20px 0;
   font-size: 14px;
   margin-top: 50px;
-  box-shadow: 0 -5px 10px rgba(0,0,0,0.5);
 }
 
-.footer p {
-  margin: 0;
-}
-
-/* Mobile flexivel */
+/* RESPONSIVIDADE */
 @media screen and (max-width: 480px) {
-  .container {
-    max-width: 90%;
-    margin: 20px auto;
-    padding: 15px;
-  }
-
-  .main-title {
-    font-size: 28px;
-  }
-
-  .microfone {
-    font-size: 40px;
-    margin: 0 5px;
-  }
-
-  .episode-title {
-    font-size: 16px;
-  }
-
-  .cd {
-    width: 200px;
-    height: 200px;
-  }
-
-  .wave {
-    height: 30px;
-  }
-
-  .wave span {
-    width: 4px;
-    height: 15px;
-  }
-
-  button img {
-    width: 40px;
-    height: 40px;
-  }
-
-  #progress {
-    height: 5px;
-  }
-
-  .volume {
-    height: 80px;
-  }
-
-  .icon-volume {
-    width: 30px;
-  }
-
-  #volume {
-    width: 80px;
-    bottom: 100px;
-  }
+  .container { max-width: 90%; padding: 20px; }
+  .main-title { font-size: 32px; }
+  .microfone { font-size: 35px; }
+  .cd { width: 220px; height: 220px; }
+  .btn-lg { width: 50px; height: 50px; }
+  .btn-sm { width: 30px; height: 30px; }
 }
- /* player flexivel */
-@media screen and (max-width: 480px) {
-  .controls {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .main-controls {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  #progress {
-    width: 100%;
-  }
-}
-
-/* Reduzir fontes para caber na tela */
-@media screen and (max-width: 480px) {
-  .main-title {
-    font-size: 28px;
-  }
-  .episode-title {
-    font-size: 16px;
-  }
-  .container p {
-    font-size: 12px;
-  }
-}
-
-/* Disco e Ondas menores */
-@media screen and (max-width: 480px) {
-  .cd {
-    width: 200px;
-    height: 200px;
-  }
-
-  .wave {
-    height: 25px;
-    gap: 4px;
-  }
-
-  .wave span {
-    width: 4px;
-    height: 12px;
-  }
-}
-
-/* Rodapé menor e mais compacto */
-@media screen and (max-width: 480px) {
-  .footer {
-    font-size: 12px;
-    padding: 10px 0;
-  }
-}
-

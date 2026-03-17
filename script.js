@@ -117,3 +117,22 @@ audio.addEventListener("ended", () => {
 function skip(seconds) {
     audio.currentTime += seconds;
 }
+
+// 1. Adicionar esta função
+function skip(seconds) {
+  audio.currentTime += seconds;
+}
+
+// 2. Atualizar dentro do seu audio.addEventListener("timeupdate", ...)
+audio.addEventListener("timeupdate", () => {
+  if (!audio.duration) return;
+  
+  // Atualiza a barra
+  let percent = (audio.currentTime / audio.duration) * 100;
+  progress.value = percent;
+  progress.style.background = `linear-gradient(to right, #00dcde ${percent}%, #555 ${percent}%)`;
+
+  // ATUALIZAÇÃO AQUI: Novos IDs de tempo separados
+  document.getElementById("current-time").innerText = formatTime(audio.currentTime);
+  document.getElementById("total-duration").innerText = formatTime(audio.duration);
+});
