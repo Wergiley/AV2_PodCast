@@ -41,7 +41,7 @@ O podcast apresenta uma análise crítica sobre a importância da ética no ambi
 
 ## 🌐 Acesse o projeto
 
-👉 (Clique aqui: <a href="#">Podcast</a>)
+👉 (Clique aqui: <a href="https://wergiley.github.io/AV2_PodCast/">Podcast</a>)
 
 ---
 
