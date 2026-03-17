@@ -113,3 +113,4 @@ audio.addEventListener("ended", () => {
   time.innerText = "00:00 / " + formatTime(audio.duration);
   audio.currentTime = 0;
 });
+

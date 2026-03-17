@@ -16,6 +16,7 @@ body {
   box-shadow: 0 0 40px rgba(0,0,0,0.8);
 }
 
+
 .container p {
   color: #bbb;
   font-size: 14px;
@@ -27,15 +28,22 @@ body {
   font-size: 42px;
   margin-top: 30px;
   margin-bottom: 10px;
-
   font-weight: bold;
   letter-spacing: 2px;
-
-  background: linear-gradient(90deg, #1db954, #1ed760);
+  background: linear-gradient(45deg, #00dcde, #0014f1);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.microfone {
+  font-size: 60px;
+  -webkit-background-clip: unset;
+  background-clip: text;
+  -webkit-text-fill-color: #ff00fb;
+  display: inline-block;
+  margin: 0 10px;
+}
 
 /* Título */
 .episode-title {
