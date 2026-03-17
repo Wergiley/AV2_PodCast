@@ -242,3 +242,108 @@ button img {
 #btn {
   flex-shrink: 0;
 }
+
+/* Mobile flexivel */
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .main-title {
+    font-size: 28px;
+  }
+
+  .microfone {
+    font-size: 40px;
+    margin: 0 5px;
+  }
+
+  .episode-title {
+    font-size: 16px;
+  }
+
+  .cd {
+    width: 200px;
+    height: 200px;
+  }
+
+  .wave {
+    height: 30px;
+  }
+
+  .wave span {
+    width: 4px;
+    height: 15px;
+  }
+
+  button img {
+    width: 40px;
+    height: 40px;
+  }
+
+  #progress {
+    height: 5px;
+  }
+
+  .volume {
+    height: 80px;
+  }
+
+  .icon-volume {
+    width: 30px;
+  }
+
+  #volume {
+    width: 80px;
+    bottom: 100px;
+  }
+}
+ /* player flexivel */
+@media screen and (max-width: 480px) {
+  .controls {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .main-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #progress {
+    width: 100%;
+  }
+}
+
+/* Reduzir fontes para caber na tela */
+@media screen and (max-width: 480px) {
+  .main-title {
+    font-size: 28px;
+  }
+  .episode-title {
+    font-size: 16px;
+  }
+  .container p {
+    font-size: 12px;
+  }
+}
+
+/* Disco e Ondas menores */
+@media screen and (max-width: 480px) {
+  .cd {
+    width: 200px;
+    height: 200px;
+  }
+
+  .wave {
+    height: 25px;
+    gap: 4px;
+  }
+
+  .wave span {
+    width: 4px;
+    height: 12px;
+  }
+}
