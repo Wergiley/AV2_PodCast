@@ -16,7 +16,6 @@ body {
   box-shadow: 0 0 40px rgba(0,0,0,0.8);
 }
 
-
 .container p {
   color: #bbb;
   font-size: 14px;
@@ -82,12 +81,13 @@ body {
 .wave span {
   width: 6px;
   height: 20px; /* altura base */
-  background: #00dcde;
+   background: linear-gradient(to top, #003e3f, #00f1f1);
   border-radius: 5px;
 
   animation: wave 1s infinite ease-in-out;
   animation-play-state: paused;
 }
+
 
 .wave span:nth-child(1) {
   animation-delay: 0s;
