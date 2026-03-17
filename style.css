@@ -243,6 +243,22 @@ button img {
   flex-shrink: 0;
 }
 
+/* Rodapé da página */
+.footer {
+  width: 100%;
+  background: #111; /* cor de fundo escura */
+  color: #aaa;      /* texto cinza claro */
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  margin-top: 50px;
+  box-shadow: 0 -5px 10px rgba(0,0,0,0.5);
+}
+
+.footer p {
+  margin: 0;
+}
+
 /* Mobile flexivel */
 @media screen and (max-width: 480px) {
   .container {
@@ -347,3 +363,12 @@ button img {
     height: 12px;
   }
 }
+
+/* Rodapé menor e mais compacto */
+@media screen and (max-width: 480px) {
+  .footer {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+}
+
